@@ -1,0 +1,69 @@
+/*Darkshadows61*/
+*{
+    box-sizing: border-box;
+}
+html{
+    background: url(images/pokeballbanner3.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+header{
+    background: url(images/pokeballbanner2.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+header #headerNav ul{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    color: white;
+}
+header #headerNav li{
+    list-style: none;
+    width: 100%;
+}
+header #headerNav li a:link{
+    text-decoration: none;
+    color: black;
+}
+header #headerNav li a:any-link{
+    color: white;
+}
+table{
+    display: flex;
+}
+#typeTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+th{
+    border: 1px black solid;
+}
+td{
+    border: 1px black solid;
+}
+footer{
+    color: black;
+    padding-right: 2%;
+}
+footer ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer li{
+    list-style: none;
+}
+footer a:link{
+    text-decoration: none;
+    color: black;
+}
+footer a:any-link{
+    color: black;
+}
