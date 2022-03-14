@@ -3,24 +3,22 @@
     box-sizing: border-box;
 }
 html{
-    background: url(images/pokeballbanner3.png) no-repeat;
+    background: url(images/pokeballbanner4.png) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 header{
-    background: url(images/pokeballbanner2.png) no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: black;
+    height: 50px;
 }
 header #headerNav ul{
     display: flex;
     flex-direction: row;
     align-content: space-between;
     color: white;
+    font-size: large;
 }
 header #headerNav li{
     list-style: none;
@@ -31,6 +29,26 @@ header #headerNav li a:link{
     color: black;
 }
 header #headerNav li a:any-link{
+    color: white;
+}
+#Welcome{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#Welcome h2{
+    font-size: xx-large
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+main #aboutBrock{
+    width: 30%;
+}
+#aboutBrock a:any-link{
+    text-decoration: none;
     color: white;
 }
 table{
