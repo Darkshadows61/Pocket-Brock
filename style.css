@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 html{
-    background: url(images/pokeballbanner4.png) no-repeat;
+    /*background: url(images/pokeballbanner4.png) no-repeat;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -149,14 +149,14 @@ html{
 main{
     display: flex;
     justify-content: space-evenly;
-    color: white;
+    
 }
 main #aboutBrock{
     width: 30%;
 }
 #aboutBrock a:any-link{
     text-decoration: none;
-    color: white;
+    
 }
 table{
     display: flex;
@@ -165,7 +165,7 @@ table{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    
 }
 th{
     border: 1px black solid;

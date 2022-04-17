@@ -15,7 +15,6 @@
         <title>Pocket Brock.com</title>
     </head>
     
-
         <header class="header">
             <a href="#" alt="logo" class="logo">Pocket Brock.com</a>
             <input class="menuButton" type="checkbox" id="menuButton">
@@ -28,36 +27,99 @@
                         <li><a href="About.html">About</a></li>
                         <li><a href="Contact.html">Contact</a></li>
                         <li><form>
-                            <input id="search" type="text" placeholder="Search">
-                            </form></li>
+                            <input id="searchRequest" name="search" type="text" placeholder="Search">
+                            </form><button id="search">Search</li>
                     </ul>
                 </nav>
         </header>
-<div>
+
     <body>
         <section id="Welcome">
-        <h2>Welcome to Pocket Brock.com!</h2>
+            <h2>Welcome to Pocket Brock.com!</h2>
         </section>
 
-        <main>
-            <section id="Brock">
+        <section id="askBrock">
+            <h1>Hey Brock! Is this effective?</h1>
+            <p>Select an Attacking Move Type and a Defending Move Type to determine it's effectiveness</p>
+            <section id='select'>
+                <select id="atkVal" name="atk">
+                    <option value="none">Attacking Type</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="ice">Ice</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="flying">Flying</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="bug">Bug</option>
+                    <option value="rock">Rock</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="steel">Steel</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                    <span> vs </span>
+                <select id="defVal1" name="def1">
+                    <option value="">Defending Type 1</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="ice">Ice</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="flying">Flying</option>                        <option value="psychic">Psychic</option>
+                    <option value="bug">Bug</option>
+                    <option value="rock">Rock</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="steel">Steel</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                <select id="defVal2" name="def2">
+                    <option value="">Defending Type 2</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="ice">Ice</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="flying">Flying</option>                        <option value="psychic">Psychic</option>
+                    <option value="bug">Bug</option>
+                    <option value="rock">Rock</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="steel">Steel</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+                    <button id="go">Go!</button>
+            </section>
+            <section>
+                <h3>Brock says:
+                    <span id="attack"></span>
+                    <span> is </span>
+                    <span id="result"></span>
+                    <span> vs </span>
+                    <span id="defense1"></span>
+                    <span>/</span>
+                    <span id="defense2"></span>
+                    <span> types </span>
+                    </h3>
                 <img src="images/DP-Brock.png" alt="Brock">
-                <p>Brock (たけし)</p>
             </section>
-            <section id="aboutBrock">
-                <h3>Brock (たけし)</h3>
-                <p>Brock, the first leader trainers encounter in the Kanto region is known for a few things; he's the Gym Leader for the Pewter City Gym and sepcializes in Rock-type Pokemon, he wants to become the worlds best Pokemon Breeder, he loves pretty women, he travels with Ash and Misty throughout the Indigio League arc, but most importantly he is a wealth of pokemon knowledge.</p>
-                <p>Brock is here in your pocket to help you along your pokemon journey by answering some of the imortant questions many trainers have. Here, Brock can help you: </br>
-                </br>
-                <a href="TypeChart.html">Type Chart</a></br>
-                <a href="StabCalc.html">Stab Calculator</br>
-                <a href="#">More</a></br>
-                <a href="#">More</a></br>
-            </p>
-            </section>
-        </main>
-    </body>
-</div>
+        </section>
 
     <footer>
         <nav>
@@ -67,5 +129,6 @@
             </ul>
         </nav>
     </footer>
-    
+
+    <script src="PocketBrockJS.js"></script>
 </html>
