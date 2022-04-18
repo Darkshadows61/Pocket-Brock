@@ -191,15 +191,21 @@ function normal(){
 
   function ice(){
     let r = "";
-    if (def1 ==='grass' || def2 === 'grass') {
+    if (def1 ==='fire' || def2 === 'fire') {
         r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
+    } else if (def1 ==='water' || def2 === 'water') {
         r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
+    } else if (def1 ==='ice' || def2 ==='ice') {
         r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
+    } else if (def1 ==='steel' || def2 ==='steel') {
+        r = 'not very effective'
+    } else if (def1 ==='grass'|| def2 ==='grass') {
+        r = 'super effective'
+    } else if (def1 ==='ground' || def2 ==='ground') {
         r = 'super effective'
     } else if (def1 ==='flying' || def2 ==='flying') {
+        r = 'super effective'
+    } else if (def1 ==='dragon' || def2 ==='dragon') {
         r = 'super effective'
     } else {
         r = 'effective'
@@ -209,21 +215,27 @@ function normal(){
 
   function fighting(){
         let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
+    if (def1 ==='ghost' || def2 === 'ghost') {
         r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
+    } else if (def1 ==='poison' || def2 === 'poison') {
         r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
+    } else if (def1 ==='flying' || def2 === 'flying') {
         r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
+    } else if (def1 ==='psychic' || def2 === 'psychic') {
         r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
+    } else if (def1 ==='bug' || def2 === 'bug') {
+        r = 'not very effective'
+    } else if (def1 ==='fairy' || def2 === 'fairy') {
+        r = 'not very effective'
+    } else if (def1 ==='normal' || def2 ==='normal') {
         r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
+    } else if (def1 ==='ice' || def2 ==='ice') {
+        r = 'super effective'
+    } else if (def1 ==='rock' || def2 ==='rock') {
+        r = 'super effective'
+    } else if (def1 ==='dark' || def2 ==='dark') {
+        r = 'super effective'
+    } else if (def1 ==='steel' || def2 ==='steel') {
         r = 'super effective'
     } else {
         r = 'effective'
@@ -233,21 +245,19 @@ function normal(){
 
   function poison(){
     let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
+    if (def1 ==='steel' || def2 === 'steel') {
         r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
+    } else if (def1 ==='poison' || def2 === 'poison') {
         r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
+    } else if (def1 ==='ground' || def2 === 'ground') {
         r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
+    } else if (def1 ==='rock' || def2 === 'rock') {
         r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
+    } else if (def1 ==='ghost' || def2 === 'ghost') {
+        r = 'not very effective'
+    } else if (def1 ==='grass' || def2 ==='grass') {
         r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
+    } else if (def1 ==='fairy' || def2 ==='fairy') {
         r = 'super effective'
     } else {
         r = 'effective'
@@ -256,229 +266,22 @@ function normal(){
   }
 
   function ground(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
+    let r = "";
+    if (def1 ==='flying' || def2 === 'flying') {
         r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
     } else if (def1 ==='grass' || def2 === 'grass') {
         r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
+    } else if (def1 ==='bug' || def2 === 'bug') {
         r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
+    } else if (def1 ==='fire' || def2 ==='fire') {
         r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
+    } else if (def1 ==='electric' || def2 ==='electric') {
         r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function flying(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
+    } else if (def1 ==='poison' || def2 ==='poison') {
         r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
+    } else if (def1 ==='rock' || def2 ==='rock') {
         r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function psychic(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function bug(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function rock(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function ghost(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function dragon(){
-       let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r 
-  }
-  function dark(){
-       let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r 
-  }
-  function steel(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
-        r = 'super effective'
-    } else {
-        r = 'effective'
-    }
-    return r
-  }
-  function fairy(){
-        let r = "";
-    if (def1 ==='ground' || def2 === 'ground') {
-        r = 'immune'
-    } else if (def1 ==='grass' && def2 === 'water') {
-        r = 'effective'
-    } else if (def1 ==='water' && def2 === 'grass') {
-        r = 'effective'
-    } else if (def1 ==='grass' || def2 === 'grass') {
-        r = 'not very effective'
-    } else if (def1 ==='electric' || def2 === 'electric') {
-        r = 'not very effective'
-    } else if (def1 ==='dragon' || def2 ==='dragon') {
-        r = 'not very effective'
-    } else if (def1 ==='water'|| def2 ==='water') {
-        r = 'super effective'
-    } else if (def1 ==='flying' || def2 ==='flying') {
+    } else if (def1 ==='steel' || def2 ==='steel') {
         r = 'super effective'
     } else {
         r = 'effective'
@@ -486,4 +289,182 @@ function normal(){
     return r
   }
 
+  function flying(){
+    let r = "";
+    if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='electric' || def2 === 'electric') {
+        r = 'not very effective'
+    } else if (def1 ==='rock' || def2 === 'rock') {
+        r = 'not very effective'
+    } else if (def1 ==='grass' || def2 ==='grass') {
+        r = 'super effective'
+    } else if (def1 ==='fighting' || def2 ==='fighting') {
+        r = 'super effective'
+    } else if (def1 ==='bug' || def2 ==='bug') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function psychic(){
+    let r = "";
+    if (def1 ==='dark' || def2 === 'dark') {
+        r = 'immune'
+    } else if (def1 ==='psychic' || def2 === 'psychic') {
+        r = 'not very effective'
+    } else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='fighting' || def2 ==='fighting') {
+        r = 'super effective'
+    } else if (def1 ==='poison' || def2 ==='poison') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function bug(){
+    let r = "";
+    if (def1 ==='fire' || def2 === 'fire') {
+        r = 'not very effective'
+    } else if (def1 ==='fighting' || def2 === 'fighting') {
+        r = 'not very effective'
+    } else if (def1 ==='poison' || def2 === 'poison') {
+        r = 'not very effective'
+    }else if (def1 ==='flying' || def2 === 'flying') {
+        r = 'not very effective'
+    }else if (def1 ==='ghost' || def2 === 'ghost') {
+        r = 'not very effective'
+    }else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    }else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    }else if (def1 ==='grass' || def2 ==='grass') {
+        r = 'super effective'
+    } else if (def1 ==='psychic' || def2 ==='psychic') {
+        r = 'super effective'
+    } else if (def1 ==='dark' || def2 ==='dark') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function rock(){
+    let r = "";
+    if (def1 ==='fighting' || def2 === 'fighting') {
+        r = 'not very effective'
+    } else if (def1 ==='ground' || def2 === 'ground') {
+        r = 'not very effective'
+    } else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='fire' || def2 ==='fire') {
+        r = 'super effective'
+    } else if (def1 ==='ice' || def2 ==='ice') {
+        r = 'super effective'
+    } else if (def1 ==='flying' || def2 ==='flying') {
+        r = 'super effective'
+    } else if (def1 ==='bug' || def2 ==='bug') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function ghost(){
+    let r = "";
+    if (def1 ==='normal' || def2 === 'normal') {
+        r = 'immune'
+    } else if (def1 ==='dark' || def2 === 'dark') {
+        r = 'not very effective'
+    } else if (def1 ==='psychic' || def2 ==='psychic') {
+        r = 'super effective'
+    } else if (def1 ==='ghost' || def2 ==='ghost') {
+        r = 'super effective'
+    } else {
+         r = 'effective'
+    }
+    return r
+  }
+
+  function dragon(){
+       let r = "";
+       if (def1 ==='fairy' || def2 === 'fairy') {
+        r = 'immune'
+    } else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='dragon' || def2 ==='dragon') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function dark(){
+    let r = "";
+    if (def1 ==='fighting' || def2 === 'fighting') {
+        r = 'not very effective'
+    } else if (def1 ==='dark' || def2 === 'dark') {
+        r = 'not very effective'
+    } else if (def1 ==='fairy' || def2 === 'fairy') {
+        r = 'not very effective'
+    } else if (def1 ==='psychic' || def2 ==='psychic') {
+        r = 'super effective'
+    } else if (def1 ==='ghost' || def2 ==='ghost') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function steel(){
+    let r = "";
+    if (def1 ==='fire' || def2 === 'fire') {
+        r = 'not very effective'
+    } else if (def1 ==='water' || def2 === 'water') {
+        r = 'not very effective'
+    } else if (def1 ==='electric' || def2 === 'electric') {
+        r = 'not very effective'
+    } else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='ice' || def2 ==='ice') {
+        r = 'super effective'
+    } else if (def1 ==='rock' || def2 ==='rock') {
+        r = 'super effective'
+    } else if (def1 ==='fairy' || def2 ==='fairy') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+
+  function fairy(){
+    let r = "";
+    if (def1 ==='fire' || def2 === 'fire') {
+        r = 'not very effective'
+    } else if (def1 ==='poison' || def2 === 'poison') {
+        r = 'not very effective'
+    } else if (def1 ==='steel' || def2 === 'steel') {
+        r = 'not very effective'
+    } else if (def1 ==='fighting' || def2 ==='fighting') {
+        r = 'super effective'
+    } else if (def1 ==='dragon' || def2 ==='dragon') {
+        r = 'super effective'
+    } else if (def1 ==='dark' || def2 ==='dark') {
+        r = 'super effective'
+    } else {
+        r = 'effective'
+    }
+    return r
+  }
+  
 }
