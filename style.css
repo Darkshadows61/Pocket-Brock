@@ -1,159 +1,13 @@
 /*Darkshadows61*/
 *{
     box-sizing: border-box;
-}
-html{
-    /*background: url(images/pokeballbanner4.png) no-repeat;*/
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    clear: both;
 }
 /* header */
-
-.header {
-    background-color: black;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-  }
-  
-  .header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    background-color: #fff;
-  }
-  
-  .header li a {
-    display: block;
-    padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
-    text-decoration: none;
-  }
-  
-  .header li a:hover,
-  .header .menuButton:hover {
-    background-color: #f4f4f4;
-  }
-  
-  .header .logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
-  
-  /* menu */
-  
-  .header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-  }
-/* menu icon */
-
-.header .menuIcon {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-  }
-  
-  .header .menuIcon .navIcon {
-    background: #333;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-  }
-  
-  .header .menuIcon .navIcon:before,
-  .header .menuIcon .navIcon:after {
-    background: #333;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-  }
-  
-  .header .menuIcon .navIcon:before {
-    top: 5px;
-  }
-  
-  .header .menuIcon .navIcon:after {
-    top: -5px;
-  }
-  
-  /* menu Button */
-  
-  .header .menuButton {
-    display: none;
-  }
-  
-  .header .menuButton:checked ~ .menu {
-    max-height: 240px;
-  }
-  
-  .header .menuButton:checked ~ .menuIcon .navIcon {
-    background: transparent;
-  }
-  
-  .header .menuButton:checked ~ .menuIcon .navIcon:before {
-    transform: rotate(-45deg);
-  }
-  
-  .header .menuButton:checked ~ .menuIcon .navIcon:after {
-    transform: rotate(45deg);
-  }
-  
-  .header .menuButton:checked ~ .menuIcon:not(.steps) .navIcon:before,
-  .header .menuButton:checked ~ .menuIcon:not(.steps) .navIcon:after {
-    top: 0;
-  }
-  
-  /* 48em = 768px */
-  
-  @media (min-width: 48em) {
-    .header li {
-      float: left;
-    }
-    .header li a {
-      padding: 20px 30px;
-    }
-    .header .menu {
-      clear: none;
-      float: right;
-      max-height: none;
-    }
-    .header .menuIcon {
-      display: none;
-    }
-  }
-#Welcome{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+header nav li{
+  list-style: none;
 }
-#Welcome h2{
-    font-size: xx-large
-}
-main{
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-main #aboutBrock{
-    width: 30%;
-}
+/* 48em = 768px */
 #aboutBrock a:any-link{
     text-decoration: none;
     
@@ -165,7 +19,6 @@ table{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 th{
     border: 1px black solid;

@@ -1,24 +1,10 @@
 //PocketBrock.com
 
-//Search
-//document.querySelector('#search').addEventListener('click', search)
-//function search () {
-    //let pokemon = document.querySelector('#searchRequest').value
-
-//fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-//.then(res => res.json())
-    //.then(data => {
-        //console.log(data)
-        
-    //})
-    //.catch(err => {
-        //console.log(`error ${err}`)
-    //})
-//}
+//Page Load
+document.querySelector('#go').addEventListener('click', test);
+document.getElementById('results').hidden = true;
 
 //STAB Calc
-document.querySelector('#go').addEventListener('click', test)
-
 function test(){
     let attk = document.querySelector('#atkVal').value;
     let def1 = document.querySelector('#defVal1').value;
@@ -26,52 +12,54 @@ function test(){
     document.querySelector('#attack').innerText = attk
     document.querySelector('#defense1').innerText = def1
     document.querySelector('#defense2').innerText = def2
+    document.getElementById('results').hidden = false
 
-        if (attk === 'normal') {
+        if (attk === 'Normal') {
             (document.querySelector('#result').innerText = normal(def1,def2))
-        } else if (attk ==='fire') {
+        } else if (attk ==='Fire') {
             (document.querySelector('#result').innerText = fire(def1,def2))
-        } else if (attk ==='water') {
+        } else if (attk ==='Water') {
             (document.querySelector('#result').innerText = water(def1,def2))
-        } else if (attk ==='grass') {
+        } else if (attk ==='Grass') {
             (document.querySelector('#result').innerText = grass(def1,def2))
-        } else if (attk ==='electric') {
+        } else if (attk ==='Electric') {
             (document.querySelector('#result').innerText = electric(def1,def2))
-        } else if (attk ==='ice') {
+        } else if (attk ==='Ice') {
             (document.querySelector('#result').innerText = ice(def1,def2))
-        } else if (attk ==='fighting') {
+        } else if (attk ==='Fighting') {
             (document.querySelector('#result').innerText = fighting(def1,def2))
-        } else if (attk ==='poison') {
+        } else if (attk ==='Poison') {
             (document.querySelector('#result').innerText = poison(def1,def2))
-        } else if (attk ==='ground') {
+        } else if (attk ==='Ground') {
             (document.querySelector('#result').innerText = ground(def1,def2))
-        } else if (attk ==='flying') {
+        } else if (attk ==='Flying') {
             (document.querySelector('#result').innerText = flying(def1,def2))
-        } else if (attk ==='psychic') {
+        } else if (attk ==='Psychic') {
             (document.querySelector('#result').innerText = psychic(def1,def2))
-        } else if (attk ==='bug') {
+        } else if (attk ==='Bug') {
             (document.querySelector('#result').innerText = bug(def1,def2))
-        } else if (attk ==='rock') {
+        } else if (attk ==='Rock') {
             (document.querySelector('#result').innerText = rock(def1,def2))
-        } else if (attk ==='ghost') {
+        } else if (attk ==='Ghost') {
             (document.querySelector('#result').innerText = ghost(def1,def2))
-        } else if (attk ==='dragon') {
+        } else if (attk ==='Dragon') {
             (document.querySelector('#result').innerText = dragon(def1,def2))
-        } else if (attk ==='dark') {
+        } else if (attk ==='Dark') {
             (document.querySelector('#result').innerText = dark(def1,def2))
-        } else if (attk ==='steel') {
+        } else if (attk ==='Steel') {
             (document.querySelector('#result').innerText = steel(def1,def2))
-        } else if (attk ==='fairy') {
+        } else if (attk ==='Fairy') {
             (document.querySelector('#result').innerText = fairy(def1,def2))
-        } 
-        
+        };
+
+               
 function normal(){
     let r = "";
-    if (def1 === 'ghost' || def2 === 'ghost') {
+    if (def1 === 'Ghost' || def2 === 'Ghost') {
         r = 'immune'
-    } else if (def1 === 'rock' || def2 === 'rock') {
+    } else if (def1 === 'Rock' || def2 === 'Rock') {
         r = 'not very effective'
-    } else if (def1 ==='steel' || def2 ==='steel') {
+    } else if (def1 ==='Steel' || def2 ==='Steel') {
         r = 'not very effective'
     } else {
         r = 'effective'

@@ -16,23 +16,44 @@
     </head>
     
 
-    <header>
-        <nav id="headerNav" class="headerNav">
-            <ul>
-                <li><a href="Home.html">Pocket Brock.com</a></li>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+                <li>Pocket Brock.com</li>
+                <li><a href="Home.html">Home</a></li>
                 <li><a href="TypeChart.html">Type Chart</a></li>
-                <li><a href="StabCalc.html">Stab Calculator</a></li>
+                <li><a href="pokedex.html">Pokedex</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a href="Contact.html">Contact</a></li>
-                <li><form>
-                    <input id="search" type="text" placeholder="Search">
-                    </form></li>
             </ul>
+            <span id="navBorder"></span>
         </nav>
     </header>
 
-    <body>
 
+    <body>
+        <section id="pageTitle">
+            <h1>Pokedex</h1>
+        </section>
+        <section id="search">
+            <form>
+                <input id="searchRequest" name="search" type="text" placeholder="Search">
+            </form>
+            <button>Search</button>
+        </section>
+        <section id='pokemonData'>
+            <h2 id="pkNumber"></h2>
+            <h2 id="pkName"></h2>
+            <img id="imgFront" src="">
+            <img id="imgBack" src="">
+            <img id="imgFrontFemale" src="">
+            <img id="imgBackFemale" src="">
+            <img id="imgFrontShiny" src="">
+            <img id="imgBackShiny" src="">
+            <img id="imgFrontShinyFemale" src="">
+            <img id="imgBackShinyFemale" src="">
+
+        </section>
     </body>
 
     <footer>
@@ -43,5 +64,5 @@
             </ul>
         </nav>
     </footer>
-    
+    <script src="pokedex.js"></script>
 </html>
