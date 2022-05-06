@@ -16,27 +16,27 @@ class PokeType{
 }
 
 //PokeType Objects
-const opener = new PokeType('Select', 'clear', ['none'], ['none'], ['none'], ['none'])
-const normal = new PokeType('Normal', 'grey', ['nothing'], ['fighting'], ['none'], ['ghost'])
-const fire = new PokeType('Fire', 'orange', ['grass', 'ice', 'bug', 'steel'], ['water', 'ground', 'rock'], ['fire', 'grass', 'ice', 'bug', 'steel', 'fairy'], ['none'])
-const water = new PokeType('Water',  'blue', ['fire', 'ground', 'rock'], ['grass', 'electric'], ['fire', 'water', 'ice', 'steel'], ['none'])
-const grass = new PokeType('Grass', 'green', ['water', 'ground', 'rock'],['fire', 'ice', 'poison', 'flying', 'bug'], ['water', 'electric', 'grass', 'ground'], ['none'])
-const electric = new PokeType('Electric', 'yellow', ['water', 'flying'], ['ground'], ['electric', 'flying', 'steel'], ['none'])
-const rock = new PokeType('Rock', 'Tan', ['fire', 'ice', 'flying', 'bug'], ['grass', 'water', 'ground', 'fighting', 'steel'], ['normal', 'fire', 'poison', 'flying'], ['none'])
-const poison = new PokeType('Poison', 'Purple', ['Grass', 'Fighting'], ['Psychic', 'Ground'], ['grass', 'fighting', 'poison', 'bug', 'fairy'], ['none'])
-const psychic = new PokeType('Psychic', 'pink', ['poison', 'fighting'], ['bug', 'ghost', 'dark'], ['fighting', 'psychic'], ['none'])
-const ice = new PokeType('Ice', 'Cyan', ['Dragon', 'Flying', 'Grass'], ['Fire', 'Rock', 'Fighting', 'Steel'], ['ice'], ['none'])
-const ground = new PokeType('Ground', 'Brown', ['Fire', , 'Rock', 'Poison', 'Steel', 'Electric'], ['Grass', 'Water', 'Ice'], ['poison', 'rock'], ['Electric'])
+const opener = new PokeType('Select', 'clear', ['None'], ['None'], ['None'], ['None'])
+const normal = new PokeType('Normal', 'grey', ['Nothing'], ['Fighting'], ['None'], ['Ghost'])
+const fire = new PokeType('Fire', 'orange', ['Grass', 'Ice', 'Bug', 'Steel'], ['Water', 'Ground', 'Rock'], ['Fire', 'Grass', 'Ice', 'Bug', 'Steel', 'Fairy'], ['None'])
+const water = new PokeType('Water',  'blue', ['Fire', 'Ground', 'Rock'], ['Grass', 'Electric'], ['Fire', 'Water', 'Ice', 'Steel'], ['None'])
+const grass = new PokeType('Grass', 'green', ['Water', 'Ground', 'Rock'],['Fire', 'Ice', 'Poison', 'Flying', 'Bug'], ['Water', 'Electric', 'Grass', 'Ground'], ['None'])
+const electric = new PokeType('Electric', 'yellow', ['Water', 'Flying'], ['Ground'], ['Electric', 'Flying', 'Steel'], ['None'])
+const rock = new PokeType('Rock', 'Tan', ['Fire', 'Ice', 'Flying', 'Bug'], ['Grass', 'Water', 'Ground', 'Fighting', 'Steel'], ['Normal', 'Fire', 'Poison', 'Flying'], ['None'])
+const poison = new PokeType('Poison', 'Purple', ['Grass', 'Fighting'], ['Psychic', 'Ground'], ['Grass', 'Fighting', 'Poison', 'Bug', 'Fairy'], ['None'])
+const psychic = new PokeType('Psychic', 'pink', ['Poison', 'Fighting'], ['Bug', 'Ghost', 'Dark'], ['Fighting', 'Psychic'], ['None'])
+const ice = new PokeType('Ice', 'Cyan', ['Dragon', 'Flying', 'Grass'], ['Fire', 'Rock', 'Fighting', 'Steel'], ['Ice'], ['None'])
+const ground = new PokeType('Ground', 'Brown', ['Fire', , 'Rock', 'Poison', 'Steel', 'Electric'], ['Grass', 'Water', 'Ice'], ['Poison', 'Rock'], ['Electric'])
 //Electric added to both strong against and immune array
-const flying = new PokeType('Flying', 'Light Blue', ['Grass', 'Fighting', 'Bug'], ['Electric', 'Rock', 'Ice'], ['grass', 'fighting', 'bug'], ['ground'])
-const fighting = new PokeType('Fighting', 'Red', ['Rock', 'Ice', 'Dark', 'Steel'], ['Psychic', 'Flying', 'Fairy'], ['bug', 'rock', 'dark'], ['none'] )
-const bug = new PokeType('Bug', 'Green', ['Grass', 'Psychic', 'Dark'], ['Fire', 'Flying', 'Rock'], ['grass', 'fighting', 'ground'], ['none'])
-const ghost = new PokeType('Ghost', 'Lavender', ['Psychic', 'Ghost'], ['Ghost', 'Dark'], ['poison', 'bug'], ['normal', 'fighting'])
-const dragon = new PokeType('Dragon', 'Blue', ['Dragon'], ['Ice', 'Dragon', 'Fairy'], ['fire', 'water', 'electric', 'grass'], ['none'])
-const dark = new PokeType('Dark', 'Black', ['Psychic', 'Ghost'], ['Fighting', 'Bug', 'Fairy'], ['ghost', 'dark'], ['psychic'])
+const flying = new PokeType('Flying', 'Light Blue', ['Grass', 'Fighting', 'Bug'], ['Electric', 'Rock', 'Ice'], ['Grass', 'Fighting', 'Bug'], ['Ground'])
+const fighting = new PokeType('Fighting', 'Red', ['Rock', 'Ice', 'Dark', 'Steel'], ['Psychic', 'Flying', 'Fairy'], ['Bug', 'Rock', 'Dark'], ['None'] )
+const bug = new PokeType('Bug', 'Green', ['Grass', 'Psychic', 'Dark'], ['Fire', 'Flying', 'Rock'], ['Grass', 'Fighting', 'Ground'], ['None'])
+const ghost = new PokeType('Ghost', 'Lavender', ['Psychic', 'Ghost'], ['Ghost', 'Dark'], ['Poison', 'Bug'], ['Normal', 'Fighting'])
+const dragon = new PokeType('Dragon', 'Blue', ['Dragon'], ['Ice', 'Dragon', 'Fairy'], ['Fire', 'Water', 'Electric', 'Grass'], ['None'])
+const dark = new PokeType('Dark', 'Black', ['Psychic', 'Ghost'], ['Fighting', 'Bug', 'Fairy'], ['Ghost', 'Dark'], ['Psychic'])
 //got called to an intubation, couldn't remember if dark is completely immune to psychic
-const steel = new PokeType('Steel', 'Gray', ['Rock', 'Ice', 'Fairy'], ['Fire', 'Ground', 'Fighting'], ['normal', 'grass', 'ice', 'flying', 'psychic', 'bug', 'rock', 'dragon', 'steel', 'fairy'], ['poison'])
-const fairy = new PokeType('Fairy', 'Pink', ['Fighting', 'Dragon', 'Dark'], ['Poison', 'Dark'], ['fighting', 'bug', 'dark'], ['dragon'])
+const steel = new PokeType('Steel', 'Gray', ['Rock', 'Ice', 'Fairy'], ['Fire', 'Ground', 'Fighting'], ['Normal', 'Grass', 'Ice', 'Flying', 'Psychic', 'Bug', 'Rock', 'Dragon', 'Steel', 'Fairy'], ['Poison'])
+const fairy = new PokeType('Fairy', 'Pink', ['Fighting', 'Dragon', 'Dark'], ['Poison', 'Dark'], ['Fighting', 'Bug', 'Dark'], ['Dragon'])
 
 
 //List Container
