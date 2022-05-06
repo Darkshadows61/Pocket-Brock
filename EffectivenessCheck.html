@@ -6,27 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object types</title>
 </head>
+
 <body>
-    <h1>Offense/Defense<h1>
+    <h1>Offense<h1>
         <section id="askBrock">
             <h2>Hey Brock! I want to know...</h2>
-            <h3><button>Offense</button><br>
-            <button>Defense</button></h3>
-            <p>Select an Attacking Move Type and a Defending Move Type to determine it's effectiveness</p>
+        </section>
+
+        <section>
+            <p>Select Type</p>
             <section id='select'>
                 <select id="selectorAttack"></select>
                 <span>VS</span>
                 <select id="selectorDefense1"></select>
                 <select id="selectorDefense2"></select>
-                    <button id="go">Go!</button>
+                <button id="go">Go!</button>
             </section>
-           <section id="brockImg">
-                <img src="images/DP-Brock.png" alt="Brock">
-                    <h4>Brock says:</h4>
-                    <span id="test"></span>
-                        
-                    </section>
-            </section>
+        </section>
+        
+        <section id="brockImg">
+            <img src="images/DP-Brock.png" alt="Brock">
+                <h4>Brock says:</h4>
+                <span id="test"></span>     
+        </section>
 </body>
-<script src="Type.js"></script>
+
+<script src="EffectivenessCheck.js"></script>
 </html>

@@ -1,9 +1,7 @@
 //Pocket Brock, now with Objects!
 
 //Page Load
-document.querySelector('#go').addEventListener('click', sort);
-//document.querySelector('#go').addEventListener('click', effectiveCheck);
-//document.getElementById('results').hidden = true;
+document.querySelector('#go').addEventListener('click', sortAtk);
 
 //PokeType Constructor
 class PokeType{
@@ -21,6 +19,7 @@ const opener = new PokeType('Select', 'clear', ['none'], ['none'], ['none'])
 const normal = new PokeType('Normal', 'grey', ['nothing'], ['fighting'], ['ghost'])
 const fire = new PokeType('Fire', 'orange', ['grass', 'ice', 'bug', 'steel'], ['water', 'ground', 'rock'], ['none'])
 const water = new PokeType('Water',  'blue', ['fire', 'ground', 'rock'],['grass', 'electric'], ['none'])
+const grass = new PokeType('Grass', 'green', [],[],[])
 const electric = new PokeType('Electric', 'yellow', ['water', 'flying'], [''], [''])
 const rock = new PokeType('Rock', 'Tan', ['fire', 'ice', 'flying', 'bug'], ['grass', 'water', 'ground', 'fighting', 'steel'], [])
 const poison = new PokeType('Poison', 'Purple', ['Grass', 'Fighting'], ['Psychic', 'Ground'], [])
@@ -30,7 +29,7 @@ const ground = new PokeType('Ground', 'Brown', ['Fire', , 'Rock', 'Poison', 'Ste
 //Electric added to both strong against and immune array
 const flying = new PokeType('Flying', 'Light Blue', ['Grass', 'Fighting', 'Bug'], ['Electric', 'Rock', 'Ice'], [])
 const fighting = new PokeType('Fighting', 'Red', ['Rock', 'Ice', 'Dark', 'Steel'], ['Psychic', 'Flying', 'Fairy'], [] )
-const  bug = new PokeType('Bug', 'Green', ['Grass', 'Psychic', 'Dark'], ['Fire', 'Flying', 'Rock'], [])
+const bug = new PokeType('Bug', 'Green', ['Grass', 'Psychic', 'Dark'], ['Fire', 'Flying', 'Rock'], [])
 const ghost = new PokeType('Ghost', 'Lavender', ['Psychic', 'Ghost'], ['Ghost', 'Dark'], [])
 const dragon = new PokeType('Dragon', 'Blue', ['Dragon'], ['Ice', 'Dragon', 'Fairy'], [])
 const dark = new PokeType('Dark', 'Black', ['Psychic', 'Ghost'], ['Fighting', 'Bug', 'Fairy'], ['Psychic'])
@@ -40,7 +39,7 @@ const fairy = new PokeType('Fairy', 'Pink', ['Fighting', 'Dragon', 'Dark'], ['Po
 
 
 //List Container
-const typeName = [opener, normal, fire, water, electric]
+const typeName = [opener, normal, fire, water, grass, electric, rock, poison, psychic, ice, ground, flying, fighting, bug, ghost, dragon, dark, steel, fairy]
 
 //Attack List
 typeName.forEach(function(li){
@@ -49,26 +48,9 @@ typeName.forEach(function(li){
     option.innerHTML = li.name;
     selectorAttack.appendChild(option)
 })
-
-//Defense1 List
-typeName.forEach(function(PokeType){
-    let option = document.createElement('option');
-    option.value = PokeType.type
-    option.innerHTML = PokeType.name;
-    selectorDefense1.appendChild(option)
-})
-
-//Defense2 list
-typeName.forEach(function(PokeType){
-    let option = document.createElement('option');
-    option.value = PokeType.type
-    option.innerHTML = PokeType.name;
-    selectorDefense2.appendChild(option)
-})
-
 //Brock, what is this type Effective Against?
 //IT WORKS!!!!!!!!!!!!!!!!!! (Will continue to monitor)
-function sort() {
+function sortAtk() {
     let atkType;
     let input = document.querySelector('#selectorAttack').value;
     if (input === 'Normal') {
@@ -77,16 +59,37 @@ function sort() {
         atkType = fire
     } else if (input === 'Water') {
         atkType = water
+    }  else if (input === 'grass') {
+        atkType = grass
     } else if (input === 'Electric') {
         atkType = electric
+    } else if (input === 'Rock') {
+        atkType = rock
+    } else if (input === 'Poison') {
+        atkType = poison
+    } else if (input === 'Psychic') {
+        atkType = psychic
+    } else if (input === 'Ice') {
+        atkType = ice
+    } else if (input === 'Ground') {
+        atkType = ground
+    } else if (input === 'Flying') {
+        atkType = flying
+    } else if (input === 'Fighting') {
+        atkType = fighting
+    } else if (input === 'Bug') {
+        atkType = bug
+    } else if (input === 'Ghost') {
+        atkType = ghost
+    } else if (input === 'Dragon') {
+        atkType = dragon
+    } else if (input === 'Dark') {
+        atkType = dark
+    } else if (input === 'Steel') {
+        atkType = steel
+    } else if (input === 'Fairy') {
+        atkType = fairy
     }
-    document.querySelector('#test').innerHTML = `${atkType.name} is strong against ${atkType.strongAgainst} and is weak to ${atkType.weakTo}`
-    console.log(atkType.name, atkType.strongAgainst)
+    document.querySelector('#test').innerHTML = `${atkType.name} is strong against ${atkType.strongAgainst} and is weak to ${atkType.weakTo}. It has immunity to ${atkType.immuneTo}.`
+    console.log(atkType.name, atkType.strongAgainst, atkType.weakTo, atkType.immuneTo)
 }
-
-//Brock, how much damage will this type do against 1 or 2 defense types?
-function effectiveCheck(atk, def1, def2){
-
-}
-
-//set? for sorting an array

@@ -1,4 +1,5 @@
-//PocketBrock.com
+//ver1.0 Code
+//Uses if/else, prone to errors
 
 //Page Load
 document.querySelector('#go').addEventListener('click', test);
