@@ -1,7 +1,7 @@
 //Pocket Brock, now with Objects!
 
 //Page Load
-document.querySelector('#go').addEventListener('click', brock);
+document.querySelector('#go').addEventListener('click', sort);
 //document.querySelector('#go').addEventListener('click', effectiveCheck);
 //document.getElementById('results').hidden = true;
 
@@ -51,27 +51,26 @@ typeName.forEach(function(PokeType){
 })
 
 //Brock, what is this type Effective Against?
-function brock() {
-    let strong;
-    let weak;
-    let immune;
-    let type = document.querySelector('#selectorAttack').value;
-    if (type === 'Normal') {
-       strong = normal.strongAgainst;
-       weak = normal.weakTo;
-       immune = normal.immuneTo;
-       console.log(strong, weak, immune)
+//IT WORKS!!!!!!!!!!!!!!!!!! (Will continue to monitor)
+function sort() {
+    let atkType;
+    let input = document.querySelector('#selectorAttack').value;
+    if (input === 'Normal') {
+        atkType = normal
+    } else if (input === 'Fire') {
+        atkType = fire
+    } else if (input === 'Water') {
+        atkType = water
+    } else if (input === 'Electric') {
+        atkType = electric
     }
-    document.querySelector('#test').innerHTML = `${type} is `
-    //console.log(`${type.name} is strong against ${type.strongAgainst} and is weak to ${type.weakTo}`)
+    document.querySelector('#test').innerHTML = `${atkType.name} is strong against ${atkType.strongAgainst} and is weak to ${atkType.weakTo}`
+    console.log(atkType.name, atkType.strongAgainst)
 }
 
 //Brock, how much damage will this type do against 1 or 2 defense types?
-//this doens't entirely work yet
 function effectiveCheck(atk, def1, def2){
-    //console.log(atk.strongAgainst);
-    //console.log(def1.weakTo);
-    //console.log(def2.weakTo);
+
 }
 
 //set? for sorting an array
