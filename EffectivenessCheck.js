@@ -73,10 +73,13 @@ function effectivenessCheck () {
     let input1 = document.querySelector('#selectorAttack').value;
     let input2 = document.querySelector('#selectorDefense1').value;
     let input3 = document.querySelector('#selectorDefense2').value;
-    console.log(sortAtk(input1))
-    console.log(sortDef1(input2))
-    console.log(sortDef2(input3))
-
+    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo))
+    document.querySelector('#test1').innerText = (`Weak to ${defWeak}`)
+    let defResist = (sortDef1(input2).resists).concat((sortDef2(input2).resists))
+    document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
+    let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input2).immuneTo))
+    document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
+   
 function sortAtk() {
     let atkType;
     if (input1 === 'Normal') {
@@ -161,6 +164,7 @@ function sortDef1() {
     }
     return def1
 }
+
 function sortDef2() {
     let def2;
     if (input3 === 'None') {
