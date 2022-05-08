@@ -37,17 +37,8 @@ const dark = new PokeType('Dark', 'Black', ['Psychic', 'Ghost'], ['Fighting', 'B
 const steel = new PokeType('Steel', 'Gray', ['Rock', 'Ice', 'Fairy'], ['Fire', 'Ground', 'Fighting'], ['Normal', 'Grass', 'Ice', 'Flying', 'Psychic', 'Bug', 'Rock', 'Dragon', 'Steel', 'Fairy'], ['Poison'])
 const fairy = new PokeType('Fairy', 'Pink', ['Fighting', 'Dragon', 'Dark'], ['Poison', 'Dark'], ['Fighting', 'Bug', 'Dark'], ['Dragon'])
 
-
 //List Container
 const typeName = [opener, normal, fire, water, grass, electric, rock, poison, psychic, ice, ground, flying, fighting, bug, ghost, dragon, dark, steel, fairy]
-
-//Attack List
-typeName.forEach(function(li){
-    let option = document.createElement('option');
-    option.value = li.name;
-    option.innerHTML = li.name;
-    selectorAttack.appendChild(option)
-})
 
 //Defense1 List
 typeName.forEach(function(li){
@@ -68,33 +59,54 @@ typeName.forEach(function(li){
 //Brock, what is this type Effective Against?
 //IT WORKS!!!!!!!!!!!!!!!!!! (Will continue to monitor)
 function effectivenessCheck () {
-    let input1 = document.querySelector('#selectorAttack').value;
+    //let input1 = document.querySelector('#selectorAttack').value;
     let input2 = document.querySelector('#selectorDefense1').value;
     let input3 = document.querySelector('#selectorDefense2').value;
-    //console.log(`${doubleWeak()} is 4x Effective and ${defWeakness()} is 2x Effective`)
-    document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective and ${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
+    console.log(`${doubleWeak()} is 4x Effective`)
+    console.log(`${defWeakness()} is 2x Effective`)
+    document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
+    document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
 
-//Returns an array of just the duplicates
+    console.log(`${doubleResistance()} is 1/4x Effective`)
+    console.log(`${defResistance()} is 1/2x Effective`)
+    document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
+    document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective against a ${input2}/${input3} type`)
+
+    console.log(`${immunityCheck()} will do 0 damage`)
+    document.querySelector('#test5').innerText = (`${immunityCheck()} will do no damage to a ${input2}/${input3} type`)
+    
+//Immunity Check
+function immunityCheck() {
+    let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input3).immuneTo));
+    defImmune = [...new Set(defImmune)]
+    return defImmune.filter((item => item !== 'None'))
+}
+
+//2x and 4x Damage Check
 function doubleWeak() {
-    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo));
+    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
     let doubleWeakTo = defWeak.filter((item, index) => index !== defWeak.indexOf(item))
     return doubleWeakTo
 }
 
 function defWeakness() {
-    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo));
+    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
     defWeak = [...new Set(defWeak)]
     return defWeak.filter((item, index) =>  index !== doubleWeak().indexOf(item))
 }
 
-//Save
-    let atk = sortAtk(input1)
-        console.log(atk)
-        //let defResist = (sortDef1(input2).resists).concat((sortDef2(input2).resists))
-        //document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
-    //let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input2).immuneTo))
-        //document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
-//Save
+// 1/2 and 1/4 Damage Check
+function doubleResistance() {
+    let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
+    let doubleResist = defResist.filter((item, index) => index !== defResist.indexOf(item));
+    return doubleResist
+}
+
+function defResistance() {
+    let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
+    defResist = [...new Set(defResist)]
+    return defResist.filter((item, index) =>  index !== doubleResistance().indexOf(item))
+}
 
 //Attack Type identifier
 function sortAtk() {

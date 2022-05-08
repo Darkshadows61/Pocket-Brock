@@ -26,6 +26,9 @@ th{
 td{
     border: 1px black solid;
 }
+#brockImg{
+    font-size: 24px;
+}
 footer{
     color: black;
     padding-right: 2%;
