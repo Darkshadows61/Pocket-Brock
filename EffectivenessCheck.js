@@ -71,28 +71,32 @@ function effectivenessCheck () {
     let input1 = document.querySelector('#selectorAttack').value;
     let input2 = document.querySelector('#selectorDefense1').value;
     let input3 = document.querySelector('#selectorDefense2').value;
+    //console.log(`${doubleWeak()} is 4x Effective and ${defWeakness()} is 2x Effective`)
+    document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective and ${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
 
-function effectMultiplier() {
-    defWeakness()
+//Returns an array of just the duplicates
+function doubleWeak() {
+    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo));
+    let doubleWeakTo = defWeak.filter((item, index) => index !== defWeak.indexOf(item))
+    return doubleWeakTo
 }
 
 function defWeakness() {
     let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo));
     defWeak = [...new Set(defWeak)]
-    return defWeak
+    return defWeak.filter((item, index) =>  index !== doubleWeak().indexOf(item))
 }
 
 //Save
     let atk = sortAtk(input1)
         console.log(atk)
-    //let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo))
-        //document.querySelector('#test1').innerText = (`Weak to ${defWeak}`)
-    let defResist = (sortDef1(input2).resists).concat((sortDef2(input2).resists))
-        document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
-    let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input2).immuneTo))
-        document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
+        //let defResist = (sortDef1(input2).resists).concat((sortDef2(input2).resists))
+        //document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
+    //let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input2).immuneTo))
+        //document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
 //Save
-    
+
+//Attack Type identifier
 function sortAtk() {
     let atkType;
     if (input1 === 'Normal') {
@@ -135,7 +139,7 @@ function sortAtk() {
     return atkType
 }
 
-//Brock, how much damage will this type do against 1 or 2 defense types?
+//Def1 Type Identifier
 function sortDef1() {
     let def1;
     if (input2 === 'Normal') {
@@ -178,6 +182,7 @@ function sortDef1() {
     return def1
 }
 
+//Def2 Type Identifier
 function sortDef2() {
     let def2;
     if (input3 === 'None') {
@@ -222,4 +227,3 @@ function sortDef2() {
     return def2
   }
 }
-//set? for sorting an array

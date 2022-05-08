@@ -3,6 +3,17 @@ let testArrWeakConcat = ['fire', 'water', 'fire', 'ice'];
 let testArrResistConcat = ['electric', 'rock', 'water', 'water'];
 let testArrImmune = ['ghost'];
 
+function test() {
+    newArr = ['fire', 'water', 'fire', 'ice', 'water']
+    return newArr
+}
+
+//Returns an array of just the duplicates
+function doubleWeak() {
+    let newArr2 = test()
+    let doubleWeakTo = newArr2.filter((item, index) => index !== newArr2.indexOf(item))
+    console.log(doubleWeakTo)
+}
 
 //identifies duplicates and counts them
 function countDuplicates() {
