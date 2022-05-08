@@ -2,7 +2,6 @@
 
 //Page Load
 document.querySelector('#go').addEventListener('click', effectivenessCheck);
-//document.getElementById('results').hidden = true;
 
 //PokeType Constructor
 class PokeType{
@@ -17,6 +16,7 @@ class PokeType{
 }
 
 //PokeType Objects
+//got called to an intubation, couldn't remember if dark is completely immune to psychic - Perserving for comedic value
 const opener = new PokeType('Select', 'clear', ['None'], ['None'], ['None'], ['None'])
 const normal = new PokeType('Normal', 'grey', ['Nothing'], ['Fighting'], ['None'], ['Ghost'])
 const fire = new PokeType('Fire', 'orange', ['Grass', 'Ice', 'Bug', 'Steel'], ['Water', 'Ground', 'Rock'], ['Fire', 'Grass', 'Ice', 'Bug', 'Steel', 'Fairy'], ['None'])
@@ -28,14 +28,12 @@ const poison = new PokeType('Poison', 'Purple', ['Grass', 'Fighting'], ['Psychic
 const psychic = new PokeType('Psychic', 'pink', ['Poison', 'Fighting'], ['Bug', 'Ghost', 'Dark'], ['Fighting', 'Psychic'], ['None'])
 const ice = new PokeType('Ice', 'Cyan', ['Dragon', 'Flying', 'Grass'], ['Fire', 'Rock', 'Fighting', 'Steel'], ['Ice'], ['None'])
 const ground = new PokeType('Ground', 'Brown', ['Fire', , 'Rock', 'Poison', 'Steel', 'Electric'], ['Grass', 'Water', 'Ice'], ['Poison', 'Rock'], ['Electric'])
-//Electric added to both strong against and immune array
 const flying = new PokeType('Flying', 'Light Blue', ['Grass', 'Fighting', 'Bug'], ['Electric', 'Rock', 'Ice'], ['Grass', 'Fighting', 'Bug'], ['Ground'])
 const fighting = new PokeType('Fighting', 'Red', ['Rock', 'Ice', 'Dark', 'Steel'], ['Psychic', 'Flying', 'Fairy'], ['Bug', 'Rock', 'Dark'], ['None'] )
 const bug = new PokeType('Bug', 'Green', ['Grass', 'Psychic', 'Dark'], ['Fire', 'Flying', 'Rock'], ['Grass', 'Fighting', 'Ground'], ['None'])
 const ghost = new PokeType('Ghost', 'Lavender', ['Psychic', 'Ghost'], ['Ghost', 'Dark'], ['Poison', 'Bug'], ['Normal', 'Fighting'])
 const dragon = new PokeType('Dragon', 'Blue', ['Dragon'], ['Ice', 'Dragon', 'Fairy'], ['Fire', 'Water', 'Electric', 'Grass'], ['None'])
 const dark = new PokeType('Dark', 'Black', ['Psychic', 'Ghost'], ['Fighting', 'Bug', 'Fairy'], ['Ghost', 'Dark'], ['Psychic'])
-//got called to an intubation, couldn't remember if dark is completely immune to psychic
 const steel = new PokeType('Steel', 'Gray', ['Rock', 'Ice', 'Fairy'], ['Fire', 'Ground', 'Fighting'], ['Normal', 'Grass', 'Ice', 'Flying', 'Psychic', 'Bug', 'Rock', 'Dragon', 'Steel', 'Fairy'], ['Poison'])
 const fairy = new PokeType('Fairy', 'Pink', ['Fighting', 'Dragon', 'Dark'], ['Poison', 'Dark'], ['Fighting', 'Bug', 'Dark'], ['Dragon'])
 
@@ -73,13 +71,28 @@ function effectivenessCheck () {
     let input1 = document.querySelector('#selectorAttack').value;
     let input2 = document.querySelector('#selectorDefense1').value;
     let input3 = document.querySelector('#selectorDefense2').value;
-    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo))
-    document.querySelector('#test1').innerText = (`Weak to ${defWeak}`)
+
+function effectMultiplier() {
+    defWeakness()
+}
+
+function defWeakness() {
+    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo));
+    defWeak = [...new Set(defWeak)]
+    return defWeak
+}
+
+//Save
+    let atk = sortAtk(input1)
+        console.log(atk)
+    //let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input2).weakTo))
+        //document.querySelector('#test1').innerText = (`Weak to ${defWeak}`)
     let defResist = (sortDef1(input2).resists).concat((sortDef2(input2).resists))
-    document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
+        document.querySelector('#test2').innerText = (`Strong against ${defResist}`)
     let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input2).immuneTo))
-    document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
-   
+        document.querySelector('#test3').innerText = (`Immune to ${defImmune}`)
+//Save
+    
 function sortAtk() {
     let atkType;
     if (input1 === 'Normal') {
