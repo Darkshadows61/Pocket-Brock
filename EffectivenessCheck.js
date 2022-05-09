@@ -57,185 +57,151 @@ typeName.forEach(function(li){
 })
 
 //Brock, what is this type Effective Against?
-//IT WORKS!!!!!!!!!!!!!!!!!! (Will continue to monitor)
 function effectivenessCheck () {
-    //let input1 = document.querySelector('#selectorAttack').value;
     let input2 = document.querySelector('#selectorDefense1').value;
     let input3 = document.querySelector('#selectorDefense2').value;
-    console.log(`${doubleWeak()} is 4x Effective`)
-    console.log(`${defWeakness()} is 2x Effective`)
-    document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
-    document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
+    checks()
+  
+    function checks() {
+        //Immunity Check Log
+        let immuneCheck = immunityCheck();
+        if (immuneCheck.length >= 1) {
+            document.querySelector('#test5').hidden = false
+            document.querySelector('#test5').innerText = (`${immunityCheck()} will do no damage to a ${input2}/${input3} type`)
+        } else {
+            document.querySelector('#test5').hidden = true
+        }
+        
+        //2x and 4x Effective Check Log
+        console.log(`${doubleWeak()} is 4x Effective`)
+        console.log(`${defWeakness()} is 2x Effective`)
+        document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
+        document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
 
-    console.log(`${doubleResistance()} is 1/4x Effective`)
-    console.log(`${defResistance()} is 1/2x Effective`)
-    document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
-    document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective against a ${input2}/${input3} type`)
+        //1/2x and 1/4x Effective Check Log
+        console.log(`${doubleResistance()} is 1/4x Effective`)
+        console.log(`${defResistance()} is 1/2x Effective`)
+        document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
+        document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective against a ${input2}/${input3} type`)
 
-    console.log(`${immunityCheck()} will do 0 damage`)
-    document.querySelector('#test5').innerText = (`${immunityCheck()} will do no damage to a ${input2}/${input3} type`)
-    
-//Immunity Check
-function immunityCheck() {
-    let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input3).immuneTo));
-    defImmune = [...new Set(defImmune)]
-    return defImmune.filter((item => item !== 'None'))
-}
+        //Immunity Check
+        function immunityCheck() {
+            let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input3).immuneTo));
+            defImmune = [...new Set(defImmune)]
+            return defImmune.filter((item => item !== 'None'));
+        }
 
-//2x and 4x Damage Check
-function doubleWeak() {
-    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
-    let doubleWeakTo = defWeak.filter((item, index) => index !== defWeak.indexOf(item))
-    return doubleWeakTo
-}
+        //2x and 4x Damage Check
+        function doubleWeak() {
+            let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
+            let doubleWeakTo = defWeak.filter((item, index) => index !== defWeak.indexOf(item))
+            return doubleWeakTo
+        }
 
-function defWeakness() {
-    let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
-    defWeak = [...new Set(defWeak)]
-    return defWeak.filter((item, index) =>  index !== doubleWeak().indexOf(item))
-}
+        function defWeakness() {
+            let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
+            defWeak = [...new Set(defWeak)]
+            return defWeak.filter((item, index) =>  index !== doubleWeak().indexOf(item))
+        }
 
-// 1/2 and 1/4 Damage Check
-function doubleResistance() {
-    let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
-    let doubleResist = defResist.filter((item, index) => index !== defResist.indexOf(item));
-    return doubleResist
-}
+        // 1/2 and 1/4 Damage Check
+        function doubleResistance() {
+            let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
+            let doubleResist = defResist.filter((item, index) => index !== defResist.indexOf(item));
+            return doubleResist
+        }
 
-function defResistance() {
-    let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
-    defResist = [...new Set(defResist)]
-    return defResist.filter((item, index) =>  index !== doubleResistance().indexOf(item))
-}
-
-//Attack Type identifier
-function sortAtk() {
-    let atkType;
-    if (input1 === 'Normal') {
-        atkType = normal
-    } else if (input1 === 'Fire') {
-        atkType = fire
-    } else if (input1 === 'Water') {
-        atkType = water
-    } else if (input1 === 'Grass') {
-        atkType = grass
-    } else if (input1 === 'Electric') {
-        atkType = electric
-    } else if (input1 === 'Rock') {
-        atkType = rock
-    } else if (input1 === 'Poison') {
-        atkType = poison
-    } else if (input1 === 'Psychic') {
-        atkType = psychic
-    } else if (input1 === 'Ice') {
-        atkType = ice
-    } else if (input1 === 'Ground') {
-        atkType = ground
-    } else if (input1 === 'Flying') {
-        atkType = flying
-    } else if (input1 === 'Fighting') {
-        atkType = fighting
-    } else if (input1 === 'Bug') {
-        atkType = bug
-    } else if (input1 === 'Ghost') {
-        atkType = ghost
-    } else if (input1 === 'Dragon') {
-        atkType = dragon
-    } else if (input1 === 'Dark') {
-        atkType = dark
-    } else if (input1 === 'Steel') {
-        atkType = steel
-    } else if (input1 === 'Fairy') {
-        atkType = fairy
+        function defResistance() {
+            let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
+            defResist = [...new Set(defResist)]
+            return defResist.filter((item, index) =>  index !== doubleResistance().indexOf(item))
+        }
     }
-    return atkType
-}
+            //Def1 Type Identifier
+            function sortDef1() {
+                let def1;
+                if (input2 === 'Normal') {
+                    def1 = normal
+                } else if (input2 === 'Fire') {
+                    def1 = fire
+                } else if (input2 === 'Water') {
+                    def1 = water
+                } else if (input2 === 'Grass') {
+                    def1 = grass
+                } else if (input2 === 'Electric') {
+                    def1 = electric
+                } else if (input2 === 'Rock') {
+                    def1 = rock
+                } else if (input2 === 'Poison') {
+                    def1 = poison
+                } else if (input2 === 'Psychic') {
+                    def1 = psychic
+                } else if (input2 === 'Ice') {
+                    def1 = ice
+                } else if (input2 === 'Ground') {
+                    def1 = ground
+                } else if (input2 === 'Flying') {
+                    def1 = flying
+                } else if (input2 === 'Fighting') {
+                    def1 = fighting
+                } else if (input2 === 'Bug') {
+                    def1 = bug
+                } else if (input2 === 'Ghost') {
+                    def1 = ghost
+                } else if (input2 === 'Dragon') {
+                    def1 = dragon
+                } else if (input2 === 'Dark') {
+                    def1 = dark
+                } else if (input2 === 'Steel') {
+                    def1 = steel
+                } else if (input2 === 'Fairy') {
+                    def1 = fairy
+                }
+                return def1
+            }
 
-//Def1 Type Identifier
-function sortDef1() {
-    let def1;
-    if (input2 === 'Normal') {
-        def1 = normal
-    } else if (input2 === 'Fire') {
-        def1 = fire
-    } else if (input2 === 'Water') {
-        def1 = water
-    } else if (input2 === 'Grass') {
-        def1 = grass
-    } else if (input2 === 'Electric') {
-        def1 = electric
-    } else if (input2 === 'Rock') {
-        def1 = rock
-    } else if (input2 === 'Poison') {
-        def1 = poison
-    } else if (input2 === 'Psychic') {
-        def1 = psychic
-    } else if (input2 === 'Ice') {
-        def1 = ice
-    } else if (input2 === 'Ground') {
-        def1 = ground
-    } else if (input2 === 'Flying') {
-        def1 = flying
-    } else if (input2 === 'Fighting') {
-        def1 = fighting
-    } else if (input2 === 'Bug') {
-        def1 = bug
-    } else if (input2 === 'Ghost') {
-        def1 = ghost
-    } else if (input2 === 'Dragon') {
-        def1 = dragon
-    } else if (input2 === 'Dark') {
-        def1 = dark
-    } else if (input2 === 'Steel') {
-        def1 = steel
-    } else if (input2 === 'Fairy') {
-        def1 = fairy
-    }
-    return def1
-}
-
-//Def2 Type Identifier
-function sortDef2() {
-    let def2;
-    if (input3 === 'None') {
-        def2 = opener
-    } else if (input3 === 'Normal') {
-        def2 = normal
-    } else if (input3 === 'Fire') {
-        def2 = fire
-    } else if (input3 === 'Water') {
-        def2 = water
-    } else if (input3 === 'Grass') {
-        def2 = grass
-    } else if (input3 === 'Electric') {
-        def2 = electric
-    } else if (input3 === 'Rock') {
-        def2 = rock
-    } else if (input3 === 'Poison') {
-        def2 = poison
-    } else if (input3 === 'Psychic') {
-        def2 = psychic
-    } else if (input3 === 'Ice') {
-        def2 = ice
-    } else if (input3 === 'Ground') {
-        def2 = ground
-    } else if (input3 === 'Flying') {
-        def2 = flying
-    } else if (input3 === 'Fighting') {
-        def2 = fighting
-    } else if (input3 === 'Bug') {
-        def2 = bug
-    } else if (input3 === 'Ghost') {
-        def2 = ghost
-    } else if (input3 === 'Dragon') {
-        def2 = dragon
-    } else if (input3 === 'Dark') {
-        def2 = dark
-    } else if (input3 === 'Steel') {
-        def2 = steel
-    } else if (input3 === 'Fairy') {
-        def2 = fairy
-    }
-    return def2
-  }
+            //Def2 Type Identifier
+            function sortDef2() {
+                let def2;
+                if (input3 === 'None') {
+                    def2 = opener
+                } else if (input3 === 'Normal') {
+                    def2 = normal
+                } else if (input3 === 'Fire') {
+                    def2 = fire
+                } else if (input3 === 'Water') {
+                    def2 = water
+                } else if (input3 === 'Grass') {
+                    def2 = grass
+                } else if (input3 === 'Electric') {
+                    def2 = electric
+                } else if (input3 === 'Rock') {
+                    def2 = rock
+                } else if (input3 === 'Poison') {
+                    def2 = poison
+                } else if (input3 === 'Psychic') {
+                    def2 = psychic
+                } else if (input3 === 'Ice') {
+                    def2 = ice
+                } else if (input3 === 'Ground') {
+                    def2 = ground
+                } else if (input3 === 'Flying') {
+                    def2 = flying
+                } else if (input3 === 'Fighting') {
+                    def2 = fighting
+                } else if (input3 === 'Bug') {
+                    def2 = bug
+                } else if (input3 === 'Ghost') {
+                    def2 = ghost
+                } else if (input3 === 'Dragon') {
+                    def2 = dragon
+                } else if (input3 === 'Dark') {
+                    def2 = dark
+                } else if (input3 === 'Steel') {
+                    def2 = steel
+                } else if (input3 === 'Fairy') {
+                    def2 = fairy
+                }
+                return def2
+            }
 }
