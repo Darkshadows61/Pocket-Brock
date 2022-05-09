@@ -73,16 +73,42 @@ function effectivenessCheck () {
         }
         
         //2x and 4x Effective Check Log
-        console.log(`${doubleWeak()} is 4x Effective`)
-        console.log(`${defWeakness()} is 2x Effective`)
-        document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
-        document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective against a ${input2}/${input3} type`)
+        let doubleWeakCheck = doubleWeak();
+        if (doubleWeakCheck.length >= 1) {
+            document.querySelector('#test1').hidden = false
+            console.log(`${doubleWeak()} is 4x Effective`)
+            document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
+        } else {
+            document.querySelector('#test1').hidden = true
+        }
+
+        let defWeaknessCheck = defWeakness();
+        if (defWeaknessCheck.length >= 1) {
+            document.querySelector('#test2').hidden = false
+            console.log(`${defWeakness()} is 2x Effective`)
+            document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective`) // against a ${input2}/${input3} type`)
+        } else {
+            document.querySelector('#test2').hidden = true
+        }
 
         //1/2x and 1/4x Effective Check Log
-        console.log(`${doubleResistance()} is 1/4x Effective`)
-        console.log(`${defResistance()} is 1/2x Effective`)
-        document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
-        document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective against a ${input2}/${input3} type`)
+        let doubleResistanceCheck = doubleResistance();
+        if (doubleResistanceCheck.length >= 1) {
+            document.querySelector('#test3').hidden = false
+            console.log(`${doubleResistance()} is 1/4x Effective`)
+            document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
+        } else {
+            document.querySelector('#test3').hidden = true
+        }    
+
+        let defResistanceCheck = defResistance();
+        if (defResistanceCheck.length >= 1) {
+            document.querySelector('#test4').hidden = false
+            console.log(`${defResistance()} is 1/2x Effective`)
+            document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective`) // against a ${input2}/${input3} type`)
+        } else {
+            document.querySelector('#test4').hidden = true
+        }
 
         //Immunity Check
         function immunityCheck() {
