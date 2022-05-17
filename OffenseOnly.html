@@ -8,24 +8,34 @@
     <title>PocketBrock - Attack Check</title>
 </head>
 
-<header class="header">
-    <nav>
-        <ul class="menu">
-            <li>Pocket Brock.com</li>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="OffenseOnly.html">Attack Check</li>
-            <li><a href="EffectivenessCheck.html">Effectiveness Check</li>
-            <li><a href="TypeChart.html">Type Chart</a></li>
-            <li><a href="Pokedex.html">Pokedex</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><form>
-                <input id="searchRequest" name="search" type="text" placeholder="Search"><button id="search">Search</button>
-                </form></li>
-        </ul>
-        <span id="navBorder"></span>
-    </nav>
-</header>
+<header>
+    <div class="topnav" id="myTopnav">
+      <a href="Home.html" class="active">Home</a>
+      <a href="OffenseOnly.html">Attack Type Check</a>
+      <a href="EffectivenessCheck.html">Effectiveness Check</a>
+      <a href="TypeChart.html">Type Chart</a>
+      <a href="pokedex.html">Pokedex</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    
+    <div style="padding-left:16px">
+    </div>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+  </header>
 
 <body>
         <section id="askBrock">
