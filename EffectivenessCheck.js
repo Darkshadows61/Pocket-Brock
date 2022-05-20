@@ -2,7 +2,6 @@
 
 //Page Load
 document.querySelector('#go').addEventListener('click', effectivenessCheck);
-const Types = [' Normal', ' Fire', ' Water', ' Grass', ' Electric', ' Rock', ' Poison', ' Psychic', ' Ice', ' Ground', ' Flying', ' Fighting', ' Bug', ' Ghost', ' Dragon', ' Dark', ' Steel', ' Fairy']
 
 //PokeType Constructor
 class PokeType{
@@ -17,8 +16,8 @@ class PokeType{
 }
 
 //PokeType Objects
-const opener = new PokeType('Select', 'clear', ['None'], ['None'], ['None'], ['None'])
-const normal = new PokeType(' Normal', 'grey', ['Nothing'], [' Fighting'], [' None'], [' Ghost'])
+const opener = new PokeType('Select', 'clear', [' None'], [' None'], [' None'], [' None'])
+const normal = new PokeType(' Normal', 'grey', [' Nothing'], [' Fighting'], [' None'], [' Ghost'])
 const fire = new PokeType(' Fire', 'orange', [' Grass', ' Ice', ' Bug', ' Steel'], [' Water', ' Ground', ' Rock'], [' Fire', ' Grass', ' Ice', ' Bug', ' Steel', ' Fairy'], [' None'])
 const water = new PokeType(' Water',  'blue', [' Fire', ' Ground', ' Rock'], [' Grass', ' Electric'], [' Fire', ' Water', ' Ice', ' Steel'], [' None'])
 const grass = new PokeType(' Grass', 'green', [' Water', ' Ground', ' Rock'],[' Fire', ' Ice', ' Poison', ' Flying', ' Bug'], [' Water', ' Electric', ' Grass', ' Ground'], [' None'])
@@ -77,7 +76,7 @@ function effectivenessCheck () {
         if (doubleWeakCheck.length >= 1) {
             document.querySelector('#test1').hidden = false
             console.log(`${doubleWeak()} is 4x Effective`)
-            document.querySelector('#test1').innerText = (`${doubleWeak()} is 4x Effective`)
+            document.querySelector('#test1').innerText = (`${doubleWeak()}`)
         } else {
             document.querySelector('#test1').hidden = true
         }
@@ -86,7 +85,7 @@ function effectivenessCheck () {
         if (defWeaknessCheck.length >= 1) {
             document.querySelector('#test2').hidden = false
             console.log(`${defWeakness()} is 2x Effective`)
-            document.querySelector('#test2').innerText = (`${defWeakness()} is 2x Effective`) // against a ${input2}/${input3} type`)
+            document.querySelector('#test2').innerText = (`${defWeakness()}`)
         } else {
             document.querySelector('#test2').hidden = true
         }
@@ -96,7 +95,7 @@ function effectivenessCheck () {
         if (doubleResistanceCheck.length >= 1) {
             document.querySelector('#test3').hidden = false
             console.log(`${doubleResistance()} is 1/4x Effective`)
-            document.querySelector('#test3').innerText = (`${doubleResistance()} is 1/4x Effective`)
+            document.querySelector('#test3').innerText = (`${doubleResistance()}`)
         } else {
             document.querySelector('#test3').hidden = true
         }    
@@ -105,7 +104,7 @@ function effectivenessCheck () {
         if (defResistanceCheck.length >= 1) {
             document.querySelector('#test4').hidden = false
             console.log(`${defResistance()} is 1/2x Effective`)
-            document.querySelector('#test4').innerText = (`${defResistance()} is 1/2x Effective`) // against a ${input2}/${input3} type`)
+            document.querySelector('#test4').innerText = (`${defResistance()}`)
         } else {
             document.querySelector('#test4').hidden = true
         }
@@ -115,25 +114,31 @@ function effectivenessCheck () {
 
         //1x Check
         function singleCheck(){
-            let singleEffect = defWeakness().concat(doubleResistance()).concat(defResistance()).concat(doubleResistance())
-            singleEffect.filter((item) => item !== Type)
-            console.log(singleEffect)
+            let types = [' Normal', ' Fire', ' Water', ' Grass', ' Electric', ' Rock', ' Poison', ' Psychic', ' Ice', ' Ground', ' Flying', ' Fighting', ' Bug', ' Ghost', ' Dragon', ' Dark', ' Steel', ' Fairy'];
+            //Concat all buff and debuff then filter out copies
+            let allEffectBonus = defWeakness().concat(doubleResistance()).concat(defResistance()).concat(doubleResistance())
+            let test1 = (allEffectBonus = [...new Set(allEffectBonus)])
+            let results = types.concat(test1)
+            //Filter out all buffs and debuffs from a main list then return remainders as 1x damage
+
         }
 
         //Immunity Check
         function immunityCheck() {
             let defImmune = (sortDef1(input2).immuneTo).concat((sortDef2(input3).immuneTo));
             defImmune = [...new Set(defImmune)]
-            return defImmune.filter((item => item !== 'None'));
+            return defImmune.filter((item => item !== ' None'));
         }
 
         //2x and 4x Damage Check
+        //4x
         function doubleWeak() {
             let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
             let doubleWeakTo = defWeak.filter((item, index) => index !== defWeak.indexOf(item))
             return doubleWeakTo
         }
 
+        //2x
         function defWeakness() {
             let defWeak = (sortDef1(input2).weakTo).concat((sortDef2(input3).weakTo));
             defWeak = [...new Set(defWeak)]
@@ -141,12 +146,14 @@ function effectivenessCheck () {
         }
 
         // 1/2 and 1/4 Damage Check
+        //1/4x
         function doubleResistance() {
             let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
             let doubleResist = defResist.filter((item, index) => index !== defResist.indexOf(item));
             return doubleResist
         }
 
+        //1/2x
         function defResistance() {
             let defResist = (sortDef1(input2).resists).concat((sortDef2(input3).resists));
             defResist = [...new Set(defResist)]
