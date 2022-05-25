@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+}
+.topNav{
+    overflow: hidden;
+    background-color: #333333;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.topNav a{
+    float: left;
+    font-size: 22px;
+    color: #333333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.homeMobile a{
+    color: white;
+    background-color: red;
+}
+.navBucket{
+    float: left;
+    overflow: hidden;
+}
+.navBucket .bucketButton{
+    font-size: 22px;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.topNav a:hover, .navBucket:hover .bucketButton{
+    background-color: gray;
+}
+.bucketItems{
+    display: none;
+    position: absolute;
+    background-color: red;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px regba(0,0,0,0.2);
+    z-index: 1;
+}
+.bucketItems a {
+    float: none;
+    color: white;
+    background-color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.bucketItems a:hover{
+    background-color: #333333;
+}
+.navBucket:hover .bucketItems{
+    display: block;
+}
+@media screen and (min-width: 601px) {
+    .mobileOnly {display: none;}
+}
+@media screen and (max-width: 600px) {
+    .navBucket, .homeMobile {display: none;}
+    .mobileOnly {
+      float: left;
+      display: block;
+      background-color: red;;
+    }
+  }
