@@ -113,3 +113,5 @@ app.get('/poke-type-api/:name', (req, res)=>{
 app.listen(PORT, ()=>{
     console.log(`The server is running on ${PORT}`)
 })
+
+//へろく heroku
