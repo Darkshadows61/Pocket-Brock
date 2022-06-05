@@ -39,61 +39,61 @@ const fairy = new PokeType('Fairy', 'Light Pink', ['Fighting', 'Dragon', 'Dark']
 
 const typesTest = {
     'unknown': {
-        'obj': unknown
+        'type': unknown
     },
     'normal': {
-        'obj': normal
+        'type': normal
     },
     'fire': {
-        'obj': fire
+        'type': fire
     },
     'water': {
-        'obj': water
+        'type': water
     },
     'grass': {
-        'obj': grass
+        'type': grass
     },
     'electric': {
-        'obj': electric
+        'type': electric
     },
     'rock': {
-        'obj': rock
+        'type': rock
     },
     'poison': {
-        'obj': poison
+        'type': poison
     },
     'psychic': {
-        'obj': psychic
+        'type': psychic
     },
     'ice': {
-        'obj': ice
+        'type': ice
     },
     'ground': {
-        'obj': ground
+        'type': ground
     },
     'flying': {
-        'obj': flying
+        'type': flying
     },
     'fighting': {
-        'obj': fighting
+        'type': fighting
     },
     'bug': {
-        'obj': bug
+        'type': bug
     },
     'ghost': {
-        'obj': ghost
+        'type': ghost
     },
     'dragon': {
-        'obj': dragon
+        'type': dragon
     },
     'dark': {
-        'obj': dark
+        'type': dark
     },
     'steel': {
-        'obj': steel
+        'type': steel
     },
     'fairy': {
-        'obj': fairy
+        'type': fairy
     },
 }
 //Server JS
@@ -103,7 +103,11 @@ app.get('/', (req, res) => {
 
 app.get('/poke-type-api/:name', (req, res)=>{
     const pokeTypeName = req.params.name.toLowerCase();
-    res.json(typesTest[pokeTypeName])
+    if (typesTest[pokeTypeName]) {
+        res.json(typesTest[pokeTypeName])
+    } else {
+        res.json(typesTest[unknown])
+  }
 })
 
 app.listen(PORT, ()=>{
